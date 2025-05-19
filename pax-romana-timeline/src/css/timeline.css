@@ -1,17 +1,50 @@
-pax-romana-timeline
-├── src
-│   ├── css
-│   │   ├── styles.css
-│   │   └── timeline.css
-│   ├── js
-│   │   ├── app.js
-│   │   ├── timeline.js
-│   │   └── data.js
-│   ├── index.html
-│   └── data
-│       └── static_data.json
-├── tests
-│   └── timeline.test.js
-├── .gitignore
-├── package.json
-└── README.md
+nigelchimwene/Desktop/projects/random/Pax-Romana/pax-romana-timeline/src/css/timeline.css
+.timeline-container {
+    width: 100%;
+    overflow-x: auto;
+    padding: 2rem 0;
+}
+
+.timeline {
+    position: relative;
+    width: 100%;
+    min-height: 400px;
+    margin: 0 auto;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-color: var(--primary-color);
+}
+
+.timeline-event {
+    position: absolute;
+    transform: translateY(-50%);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.timeline-event .event-dot {
+    width: 20px;
+    height: 20px;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.timeline-event .event-content {
+    padding: 10px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    max-width: 200px;
+}
+
+.timeline-event:hover {
+    transform: translateY(-50%) scale(1.05);
+}
