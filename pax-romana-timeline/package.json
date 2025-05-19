@@ -5,7 +5,9 @@
   "main": "src/js/app.js",
   "scripts": {
     "start": "live-server src",
-    "test": "jest"
+    "test": "jest",
+    "build": "cp -r src/* public/",
+    "vercel-build": "npm run build"
   },
   "keywords": [
     "timeline",
