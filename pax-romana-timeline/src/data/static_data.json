@@ -3,35 +3,35 @@
     "year": "27 BCE",
     "title": "Augustus Becomes Emperor",
     "description": "Octavian is granted the title of Augustus by the Roman Senate, marking the traditional beginning of the Pax Romana.",
-    "image": "url_to_image_of_augustus.jpg",
+    "image": "./images/augustus.jpg",
     "tags": ["politics", "leadership"]
   },
   {
     "year": "9 CE",
     "title": "Battle of the Teutoburg Forest",
     "description": "A major defeat for Roman legions in Germania, though the Pax Romana largely continued in other areas.",
-    "image": "url_to_image_of_teutoburg.jpg",
+    "image": "./images/Teutoburg-Forest.jpg",
     "tags": ["military", "conflict"]
   },
   {
     "year": "14 CE",
     "title": "Death of Augustus",
     "description": "Augustus dies, and Tiberius becomes the second Roman Emperor.",
-    "image": "url_to_image_of_augustus_death.jpg",
+    "image": "./images/emperor-tiberius.jpg",
     "tags": ["politics","leadership"]
   },
   {
     "year": "64 CE",
     "title": "Great Fire of Rome",
     "description": "A devastating fire that destroys much of Rome, leading to significant rebuilding efforts.",
-    "image": "url_to_image_of_fire.jpg",
+    "image": "./images/fire of rome.jpg",
     "tags": ["disaster", "reconstruction"]
   },
   {
     "year": "117 CE",
     "title": "Height of the Roman Empire",
     "description": "The Roman Empire reaches its greatest territorial extent under Emperor Trajan.",
-    "image": "url_to_image_of_empire.jpg",
+    "image": "./images/peak.jpg",
     "tags": ["expansion", "territory"]
   }
  

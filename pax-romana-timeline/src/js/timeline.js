@@ -24,8 +24,13 @@ class Timeline {
         element.innerHTML = `
             <div class="event-dot"></div>
             <div class="event-content">
-                <h3>${event.year}</h3>
-                <h4>${event.title}</h4>
+                <div class="event-image">
+                    <img src="${event.image}" alt="${event.title}">
+                </div>
+                <div class="event-text">
+                    <h3>${event.year}</h3>
+                    <h4>${event.title}</h4>
+                </div>
             </div>
         `;
         element.addEventListener('click', () => this.showEventDetails(event));
