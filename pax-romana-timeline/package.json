@@ -6,7 +6,7 @@
   "scripts": {
     "start": "live-server src",
     "test": "jest",
-    "build": "cp -r src/* public/",
+    "build": "mkdir -p public && cp -r src/* public/",
     "vercel-build": "npm run build"
   },
   "keywords": [
@@ -21,5 +21,8 @@
   },
   "devDependencies": {
     "jest": "^27.0.6"
+  },
+  "engines": {
+    "node": ">=14.0.0"
   }
 }
