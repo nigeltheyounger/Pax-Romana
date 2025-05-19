@@ -1,15 +1,17 @@
-nigelchimwene/Desktop/projects/random/Pax-Romana/pax-romana-timeline/src/css/timeline.css
 .timeline-container {
     width: 100%;
     overflow-x: auto;
-    padding: 2rem 0;
+    padding: 4rem 0;
+    background: linear-gradient(to bottom, transparent 49%, var(--primary-color) 50%, transparent 51%);
 }
 
 .timeline {
     position: relative;
-    width: 100%;
-    min-height: 400px;
+    width: max-content;
+    min-width: 100%;
+    min-height: 500px;
     margin: 0 auto;
+    padding: 0 50px;
 }
 
 .timeline::before {
@@ -22,29 +24,174 @@ nigelchimwene/Desktop/projects/random/Pax-Romana/pax-romana-timeline/src/css/tim
     background-color: var(--primary-color);
 }
 
+/* Event Styling */
 .timeline-event {
     position: absolute;
-    transform: translateY(-50%);
     cursor: pointer;
     transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 200px;
 }
 
-.timeline-event .event-dot {
-    width: 20px;
-    height: 20px;
+/* Connecting Lines */
+.timeline-event::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 50px;
     background-color: var(--secondary-color);
+    z-index: 1;
+}
+
+/* Position variants for above/below timeline */
+.timeline-event.above {
+    transform: translateY(-100%);
+}
+
+.timeline-event.above::before {
+    top: 100%;
+}
+
+.timeline-event.below {
+    transform: translateY(0);
+}
+
+.timeline-event.below::before {
+    bottom: 100%;
+}
+
+/* Event Dot */
+.timeline-event .event-dot {
+    width: 16px;
+    height: 16px;
+    background-color: var(--secondary-color);
+    border: 4px solid var(--primary-color);
     border-radius: 50%;
-    margin-bottom: 10px;
+    margin: 10px 0;
+    z-index: 2;
+    box-shadow: 0 0 0 4px rgba(116, 33, 35, 0.2);
 }
 
+/* Event Content Box */
 .timeline-event .event-content {
-    padding: 10px;
-    background-color: white;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    max-width: 200px;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    max-width: 250px;
 }
 
-.timeline-event:hover {
-    transform: translateY(-50%) scale(1.05);
+/* Year and Title Styling */
+.timeline-event .event-content h3 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin: 0 0 8px 0;
+    font-weight: 700;
+}
+
+.timeline-event .event-content h4 {
+    color: var(--text-color);
+    font-size: 1rem;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Hover Effects */
+.timeline-event:hover .event-content {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.timeline-event:hover .event-dot {
+    box-shadow: 0 0 0 6px rgba(116, 33, 35, 0.3);
+}
+
+/* Controls Styling */
+.controls {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.controls button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background: var(--secondary-color);
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.controls button:hover {
+    transform: scale(1.1);
+    background: var(--primary-color);
+}
+
+.controls select {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    border: 1px solid var(--secondary-color);
+    background: white;
+    color: var(--text-color);
+    font-size: 0.9rem;
+    cursor: pointer;
+    outline: none;
+}
+
+.controls select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(116, 33, 35, 0.1);
+}
+
+/* Tags Styling */
+.tag {
+    display: inline-block;
+    padding: 4px 8px;
+    margin: 4px;
+    background: var(--secondary-color);
+    color: white;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Modal Enhancements */
+.modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    max-width: 600px;
+    margin: 2rem auto;
+    position: relative;
+}
+
+.modal .close {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color);
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+.modal .close:hover {
+    opacity: 1;
 }

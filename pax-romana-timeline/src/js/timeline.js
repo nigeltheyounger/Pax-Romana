@@ -10,7 +10,7 @@ class Timeline {
         this.container.innerHTML = '';
         
         events.forEach((event, index) => {
-            const eventElement = this.createEventElement(event);
+            const eventElement = this.createEventElement(event, index);
             const position = this.calculatePosition(index, events.length);
             eventElement.style.left = `${position}%`;
             eventElement.style.top = index % 2 === 0 ? '40%' : '60%';
@@ -18,9 +18,9 @@ class Timeline {
         });
     }
 
-    createEventElement(event) {
+    createEventElement(event, index) {
         const element = document.createElement('div');
-        element.className = 'timeline-event';
+        element.className = `timeline-event ${index % 2 === 0 ? 'above' : 'below'}`;
         element.innerHTML = `
             <div class="event-dot"></div>
             <div class="event-content">
