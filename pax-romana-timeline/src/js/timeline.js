@@ -1,7 +1,7 @@
 class Timeline {
     constructor(container) {
         this.container = container;
-        this.scale = 1;
+        this.scale = 0.5;
         this.events = [];
     }
 
@@ -16,6 +16,8 @@ class Timeline {
             eventElement.style.top = index % 2 === 0 ? '40%' : '60%';
             this.container.appendChild(eventElement);
         });
+
+        this.setZoom(this.scale);
     }
 
     createEventElement(event, index) {
